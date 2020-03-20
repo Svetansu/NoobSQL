@@ -38,11 +38,16 @@ con.connect(function(err) {
 //		console.log("table altered finally.");
 //	});
 
-	//Insert into table
-	var sql = "INSERT INTO customers (name, email) VALUES ('Svet Noob','noobsvet@gmail.com')";
-	con.query(sql, function (err, result) {
+	//Insert many into table
+	var sql = "INSERT INTO customers (name, email) VALUES ?";
+	var values = [
+		['Poor Internet', 'poor@internet.com'],
+		['Anshuman Saboo', 'i_own@gmail.com'],
+		['Sanika Aphale', 'toobusy@gmail.com'],
+	]
+	con.query(sql, [values], function (err, result) {
 		if (err) throw err;
-		console.log("Inserted into table aaha");
+		console.log("Records in: "+result.affectedRows);
 	});
 
 });

@@ -39,7 +39,7 @@ con.connect(function(err) {
 //	});
 
 	//Insert into table
-	var sql = "INSERT INTO customers (name, email) VALUES ('Svet Noob','noobsvet@gmail.com')";
+	var sql = "INSERT INTO customers (name, email) VALUES ('Sanu Pro','prosanu@gmail.com')";
 	con.query(sql, function (err, result) {
 		if (err) throw err;
 		console.log("Inserted into table aaha");
